@@ -3,6 +3,8 @@ name: Docker Image CI (arm64)
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "0 0 3 * *"
 
 permissions:
   contents: read

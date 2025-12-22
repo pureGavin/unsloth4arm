@@ -20,9 +20,17 @@ docker build -t unsloth4arm:202512 .
 
 ## Download the image
 
+You can also download the Docker image I uploaded.
+
+```shell
+docker pull ghcr.io/puregavin/unsloth4arm:latest
+```
+
 ## Run Image
 
 I use the Docker command to run the image. Note that whether port 22 for the Jupyter server is mapped depends on your own configuration.
+
+Before running the command, remember to modify the image name to the latest image or the image you want.
 
 ```shell
 docker run -d --name=unsloth4arm --restart=always  -p 8888:8888 -v ./work/:/work/ -w /work --gpus=all unsloth4arm:202512
