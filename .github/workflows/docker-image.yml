@@ -28,6 +28,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set date tag (YYYYMM)
+        id: meta
+        run: echo "ym=$(date -u +'%Y%m')" >> "$GITHUB_OUTPUT"
+
       - name: Build and push (linux/arm64)
         uses: docker/build-push-action@v6
         with:
@@ -36,5 +40,5 @@ jobs:
           push: true
           platforms: linux/arm64
           tags: |
-            ghcr.io/puregavin/unsloth4arm:202512
-            ghcr.io/puregavin/unsloth4arm:${{ github.sha }}
+            ghcr.io/puregavin/unsloth4arm:latest
+            ghcr.io/puregavin/unsloth4arm:${{ steps.meta.outputs.ym }}
