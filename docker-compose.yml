@@ -1,0 +1,11 @@
+services:
+  selftorch:
+    image: unsloth4arm:202512
+    container_name: unsloth4arm
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/work
+    working_dir: /work
+    gpus: all
