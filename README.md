@@ -15,7 +15,7 @@ Once your local environment is ready, you can use either of the following two me
 Use the following command to build your own Docker image
 
 ```shell
-docker build -t unsloth4arm:202512 .
+docker build -t ghcr.io/puregavin/unsloth4arm:latest .
 ```
 
 ## Download the image
@@ -33,7 +33,7 @@ I use the Docker command to run the image. Note that whether port 22 for the Jup
 Before running the command, remember to modify the image name to the latest image or the image you want.
 
 ```shell
-docker run -d --name=unsloth4arm --restart=always  -p 8888:8888 -v ./work/:/work/ -w /work --gpus=all unsloth4arm:202512
+docker run -d --name=unsloth4arm --restart=always  -p 8888:8888 -v ./work/:/work/ -w /work --gpus=all ghcr.io/puregavin/unsloth4arm:latest
 ```
 
 You can also use the provided Docker Compose file to run the image, though I haven't tried this method myself :p
