@@ -13,7 +13,7 @@
 使用以下命令构建你自己的 Docker 镜像：
 
 ```shell
-docker build -t unsloth4arm:202512 .
+docker build -t ghcr.io/puregavin/unsloth4arm:latest .
 ```
 
 ## 下载镜像
@@ -29,7 +29,7 @@ docker pull ghcr.io/puregavin/unsloth4arm:latest
 我使用 Docker 命令来运行镜像。请注意，是否映射用于 Jupyter 服务器的 22 端口取决于你自己的配置。在运行命令之前，记得将镜像名称修改为最新镜像或你想要使用的镜像。
 
 ```shell
-docker run -d --name=unsloth4arm --restart=always  -p 8888:8888 -v ./work/:/work/ -w /work --gpus=all unsloth4arm:202512
+docker run -d --name=unsloth4arm --restart=always  -p 8888:8888 -v ./work/:/work/ -w /work --gpus=all ghcr.io/puregavin/unsloth4arm:latest
 ```
 
 你也可以使用提供的 Docker Compose 文件来运行镜像，不过我本人还没有尝试过这种方法 :p
