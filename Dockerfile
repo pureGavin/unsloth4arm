@@ -18,7 +18,16 @@ RUN pip install --no-cache-dir --extra-index-url=https://pypi.nvidia.com --index
     pip install --no-cache-dir \
     unsloth \
     unsloth_zoo \
-    jupyterlab-language-pack-zh-CN && \
+    gguf \
+    jupyterlab-language-pack-zh-CN \
+    jupyterlab-language-pack-zh-TW \
+    jupyterlab-language-pack-vi-VN \
+    jupyterlab-language-pack-pt-BR \
+    jupyterlab-language-pack-de-DE \
+    jupyterlab-language-pack-fr-FR \
+    jupyterlab-language-pack-he-IL \
+    jupyterlab-language-pack-ja-JP \
+    jupyterlab-language-pack-ko-KR && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
